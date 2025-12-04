@@ -1,0 +1,1 @@
+A console-based game where the computer randomly selects a number between 1 and 100. The player has 5 attempts to guess the number. After each guess, the game gives hints to go higher or lower. Input validation ensures the player enters a number within the range.
