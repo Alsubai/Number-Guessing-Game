@@ -1,0 +1,50 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    srand(time(0));
+    int number = rand() % 100 + 1;
+    int guess;
+
+    cout << "Guess the number from 1 to 100. You have 5 attempts.\n";
+
+    for (int attempt = 1; attempt <= 5; attempt++)
+    {
+        while (true)
+        {
+            cout << "\nGuess " << attempt << " : ";
+
+            if (!(cin >> guess) || guess < 1 || guess > 100)
+            {
+                cin.clear();
+                cin.ignore(1000, '\n');
+                cout << "Enter a number between 1 and 100\n";
+                continue;
+            }
+            break;
+        }
+
+        if (guess == number)
+        {
+            cout << "You guessed the number correctly!\n";
+            break;
+        }
+
+        if (attempt == 5)
+        {
+            cout << "\nGame over! The number was: " << number << endl;
+        }
+        else if (guess < number)
+        {
+            cout << "Go higher!\n";
+        }
+        else
+        {
+            cout << "Go smaller!\n";
+        }
+    }
+    system("pause");
+
+    return 0;
+}
